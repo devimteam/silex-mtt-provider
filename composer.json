@@ -1,0 +1,20 @@
+{
+    "type": "library",
+    "name": "devimteam/sms-provider",
+    "description": "SMS provider",
+    "keywords": [],
+    "license": "",
+    "authors": [],
+    "version": "1.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Devimteam\\Provider\\SmsProvider\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.7",
+        "silex/silex": "~2.0.3-DEV"
+    }
+}
