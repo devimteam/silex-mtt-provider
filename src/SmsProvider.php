@@ -1,8 +1,8 @@
 <?php
 
-namespace Devimteam\Provider\SmsProvider;
+namespace Devim\Provider\SmsProvider;
 
-use Devimteam\Provider\SmsProvider\Sender\MttSmsSender;
+use Devim\Provider\SmsProvider\Sender\MttSmsSender;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
