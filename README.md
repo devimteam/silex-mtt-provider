@@ -9,7 +9,7 @@ Adds sms service provider for your app
 #### Install via composer
 
 ```
-$ composer require devimteam/sms-provider
+$ composer require devimteam/silex-sms-provider
 ```
 
 ## Use-cases
