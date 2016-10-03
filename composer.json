@@ -1,6 +1,9 @@
 {
     "type": "library",
-    "name": "devimteam/sms-provider",
+    "name": "devimteam/silex-sms-provider",
+    "replace": {
+        "devimteam/cors-provider": "dev-master"
+    },
     "description": "SMS provider",
     "keywords": [],
     "license": "",
