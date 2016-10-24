@@ -1,6 +1,6 @@
 {
     "type": "library",
-    "name": "devimteam/silex-sms-provider",
+    "name": "devimteam/silex-mtt-provider",
     "replace": {
         "devimteam/cors-provider": "dev-master"
     },

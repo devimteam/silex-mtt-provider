@@ -1,9 +1,9 @@
 <?php
 
-namespace Devim\Provider\SmsProvider\Sender;
+namespace Devim\Provider\MttServiceProvider\Sender;
 
-use Devim\Provider\SmsProvider\Sender\Exception\SmsErrorException;
-use Devim\Provider\SmsProvider\Sender\Exception\SmsSendException;
+use Devim\Provider\MttServiceProvider\Sender\Exception\SmsErrorException;
+use Devim\Provider\MttServiceProvider\Sender\Exception\SmsSendException;
 
 /**
  * Class MttSmsSender.
@@ -49,8 +49,8 @@ class MttSmsSender implements SmsSenderInterface
      *
      * @return mixed
      *
-     * @throws \Devim\Provider\SmsProvider\Sender\Exception\SmsErrorException
-     * @throws \Devim\Provider\SmsProvider\Sender\Exception\SmsSendException
+     * @throws \Devim\Provider\MttServiceProvider\Sender\Exception\SmsErrorException
+     * @throws \Devim\Provider\MttServiceProvider\Sender\Exception\SmsSendException
      */
     public function send(string $to, string $message)
     {

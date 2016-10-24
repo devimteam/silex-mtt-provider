@@ -1,6 +1,6 @@
 <?php
 
-namespace Devim\Provider\SmsProvider\Sender\Exception;
+namespace Devim\Provider\MttServiceProvider\Sender\Exception;
 
 /**
  * Class SmsSendException.

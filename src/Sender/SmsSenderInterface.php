@@ -1,6 +1,6 @@
 <?php
 
-namespace Devim\Provider\SmsProvider\Sender;
+namespace Devim\Provider\MttServiceProvider\Sender;
 
 /**
  * Interface SmsSenderInterface.
