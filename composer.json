@@ -12,7 +12,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Devim\\Provider\\SmsProvider\\": "src/"
+            "Devim\\Provider\\MttServiceProvider\\": "src/"
         }
     },
     "require": {
