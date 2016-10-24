@@ -9,7 +9,7 @@ use Pimple\ServiceProviderInterface;
 /**
  * Class SmsProvider.
  */
-class SmsProvider implements ServiceProviderInterface
+class MttServiceProvider implements ServiceProviderInterface
 {
     /**
      * Registers services on the given container.
