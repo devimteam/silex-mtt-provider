@@ -1,4 +1,4 @@
-# Sms Service Provider
+# Mtt Service Provider
 
 ## Intro
 
@@ -9,7 +9,7 @@ Adds sms service provider for your app
 #### Install via composer
 
 ```
-$ composer require devimteam/silex-sms-provider
+$ composer require devimteam/silex-mtt-provider
 ```
 
 ## Use-cases
