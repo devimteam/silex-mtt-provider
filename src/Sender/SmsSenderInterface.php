@@ -12,8 +12,9 @@ interface SmsSenderInterface
      *
      * @param string $to
      * @param string $message
+     * @param string $shortCode
      *
      * @return mixed
      */
-    public function send(string $to, string $message);
+    public function send(string $to, string $message, string $shortCode);
 }

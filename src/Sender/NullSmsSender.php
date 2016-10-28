@@ -12,10 +12,11 @@ class NullSmsSender implements SmsSenderInterface
      *
      * @param string $to
      * @param string $message
+     * @param string $shortCode
      *
      * @return void
      */
-    public function send(string $to, string $message)
+    public function send(string $to, string $message, string $shortCode)
     {
         return;
     }
