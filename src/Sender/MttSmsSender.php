@@ -23,22 +23,15 @@ class MttSmsSender implements SmsSenderInterface
     private $password;
 
     /**
-     * @var string
-     */
-    private $shortCode;
-
-    /**
      * MttSmsSender constructor.
      *
      * @param string $login
      * @param string $password
-     * @param string $shortCode
      */
-    public function __construct(string $login, string $password, string $shortCode)
+    public function __construct(string $login, string $password)
     {
         $this->login = $login;
         $this->password = $password;
-        $this->shortCode = $shortCode;
     }
 
     /**
@@ -46,15 +39,16 @@ class MttSmsSender implements SmsSenderInterface
      *
      * @param string $to
      * @param string $message
+     * @param string $shortCode
      *
      * @return mixed
      *
      * @throws \Devim\Provider\MttServiceProvider\Sender\Exception\SmsErrorException
      * @throws \Devim\Provider\MttServiceProvider\Sender\Exception\SmsSendException
      */
-    public function send(string $to, string $message)
+    public function send(string $to, string $message, string $shortCode)
     {
-        $url = self::SMS_POOL_URL . '?' . $this->buildQuery($to, $message);
+        $url = self::SMS_POOL_URL . '?' . $this->buildQuery($to, $message, $shortCode);
 
         $request = curl_init($url);
         curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
@@ -75,17 +69,18 @@ class MttSmsSender implements SmsSenderInterface
     /**
      * @param string $to
      * @param string $message
+     * @param string $shortCode
      *
      * @return string
      */
-    final private function buildQuery(string $to, string $message) : string
+    final private function buildQuery(string $to, string $message, string $shortCode) : string
     {
         return http_build_query([
             'login' => $this->login,
             'password' => $this->password,
             'msisdn' => $to,
             'text' => $message,
-            'shortcode' => $this->shortCode,
+            'shortcode' => $shortCode,
             'operation' => 'send',
         ]);
     }
