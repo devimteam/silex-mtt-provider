@@ -1,11 +1,11 @@
 <?php
 
-namespace Devim\Provider\MttServiceProvider\Sender;
+namespace Devim\Provider\MttServiceProvider\Service;
 
 /**
  * Interface SmsSenderInterface.
  */
-interface SmsSenderInterface
+interface SmsServiceInterface
 {
     /**
      * Send SMS.
@@ -17,4 +17,12 @@ interface SmsSenderInterface
      * @return mixed
      */
     public function send(string $to, string $message, string $shortCode);
+
+    /**
+     * @param string $transactionId
+     * @param string|null $phone
+     *
+     * @return int
+     */
+    public function check(string $transactionId, string $phone = null);
 }
