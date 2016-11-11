@@ -8,7 +8,7 @@ use Devim\Provider\MttServiceProvider\Exception\SmsSendException;
 class SmsRequestService
 {
     /**
-     * @param array $data
+     * @param $data
      * @param string $url
      *
      * @return string
@@ -16,7 +16,7 @@ class SmsRequestService
      * @throws SmsSendException
      * @throws SmsErrorException
      */
-    public static function process(array $data, string $url) : string
+    public static function process($data, string $url) : string
     {
         $ch = curl_init();
 
