@@ -2,7 +2,7 @@
 
 namespace Devim\Provider\MttServiceProvider;
 
-use Devim\Provider\MttServiceProvider\Sender\MttSmsSender;
+use Devim\Provider\MttServiceProvider\Service\MttSmsService;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -23,9 +23,10 @@ class MttServiceProvider implements ServiceProviderInterface
     {
         $container['mtt.login'] = '';
         $container['mtt.password'] = '';
+        $container['mtt.url'] = '';
 
-        $container['mtt.sender'] = function () use ($container) {
-            return new MttSmsSender($container['mtt.login'], $container['mtt.password']);
+        $container['sms.mtt'] = function () use ($container) {
+            return new MttSmsService($container['mtt.login'], $container['mtt.password'], $container['mtt.url']);
         };
     }
 }
