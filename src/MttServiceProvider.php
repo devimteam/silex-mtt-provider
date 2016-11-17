@@ -23,10 +23,11 @@ class MttServiceProvider implements ServiceProviderInterface
     {
         $container['mtt.login'] = '';
         $container['mtt.password'] = '';
+        $container['mtt.default_short_code'] = '';
         $container['mtt.url'] = '';
 
         $container['sms.mtt'] = function () use ($container) {
-            return new MttSmsService($container['mtt.login'], $container['mtt.password'], $container['mtt.url']);
+            return new MttSmsService($container['mtt.login'], $container['mtt.password'], $container['mtt.url'], $container['mtt.default_short_code']);
         };
     }
 }

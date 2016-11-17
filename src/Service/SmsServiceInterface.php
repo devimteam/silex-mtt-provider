@@ -16,7 +16,7 @@ interface SmsServiceInterface
      *
      * @return mixed
      */
-    public function send(string $to, string $message, string $shortCode);
+    public function send(string $to, string $message, string $shortCode = null);
 
     /**
      * @param string $transactionId
