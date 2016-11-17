@@ -43,7 +43,7 @@ class MttSmsService implements SmsServiceInterface
      *
      * @return string
      */
-    public function send(string $phone, string $text, string $shortCode = null) : string
+    public function send(string $phone, string $text, string $shortCode) : string
     {
         $data = [
             'msisdn' => $phone,
@@ -58,11 +58,10 @@ class MttSmsService implements SmsServiceInterface
 
     /**
      * @param string $transactionId
-     * @param string|null $phone
      *
      * @return int
      */
-    public function check(string $transactionId, string $phone = null) : int
+    public function check(string $transactionId) : int
     {
         $data = [
             'id' => $transactionId,

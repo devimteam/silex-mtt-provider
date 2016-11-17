@@ -20,9 +20,8 @@ interface SmsServiceInterface
 
     /**
      * @param string $transactionId
-     * @param string|null $phone
      *
      * @return int
      */
-    public function check(string $transactionId, string $phone = null);
+    public function check(string $transactionId);
 }
