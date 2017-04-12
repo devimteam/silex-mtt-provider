@@ -29,7 +29,8 @@ class MttResponseFilter
         'invalid shortcode',
         'billing failed',
         'throttling error',
-        'transaction not found'
+        'transaction not found',
+        'invalid parameter text'
     ];
 
     /**
