@@ -30,7 +30,8 @@ class MttResponseFilter
         'billing failed',
         'throttling error',
         'transaction not found',
-        'invalid parameter text'
+        'invalid parameter text',
+        'billing error'
     ];
 
     /**
