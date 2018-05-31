@@ -47,10 +47,6 @@ class MttResponseFilter
             throw new SmsErrorException($response);
         }
 
-        if (is_numeric($response)) {
-            return $response;
-        } else {
-            return self::RESPONSES[$response];
-        }
+        return self::RESPONSES[$response] ?? $response;
     }
 }
