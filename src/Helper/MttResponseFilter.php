@@ -29,7 +29,9 @@ class MttResponseFilter
         'invalid shortcode',
         'billing failed',
         'throttling error',
-        'transaction not found'
+        'transaction not found',
+        'invalid parameter text',
+        'billing error'
     ];
 
     /**
@@ -45,10 +47,6 @@ class MttResponseFilter
             throw new SmsErrorException($response);
         }
 
-        if (is_numeric($response)) {
-            return $response;
-        } else {
-            return self::RESPONSES[$response];
-        }
+        return self::RESPONSES[$response] ?? $response;
     }
 }

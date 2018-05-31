@@ -16,18 +16,17 @@ class NullSmsService implements SmsServiceInterface
      *
      * @return string
      */
-    public function send(string $to, string $message, string $shortCode) : string
+    public function send(string $to, string $message, string $shortCode = null) : string
     {
         return '1';
     }
 
     /**
      * @param string $transactionId
-     * @param string|null $phone
      *
      * @return int
      */
-    public function check(string $transactionId, string $phone = null) : int
+    public function check(string $transactionId) : int
     {
         return 1;
     }

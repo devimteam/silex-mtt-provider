@@ -23,17 +23,24 @@ class MttSmsService implements SmsServiceInterface
     private $url;
 
     /**
+     * @var string
+     */
+    private $defaultShortCode;
+
+    /**
      * MttService constructor.
      *
      * @param string $login
      * @param string $password
      * @param string $url
+     * @param string $defaultShortCode
      */
-    public function __construct(string $login, string $password, string $url)
+    public function __construct(string $login, string $password, string $url, string $defaultShortCode)
     {
         $this->login = $login;
         $this->password = $password;
         $this->url = $url;
+        $this->defaultShortCode = $defaultShortCode;
     }
 
     /**
@@ -43,8 +50,12 @@ class MttSmsService implements SmsServiceInterface
      *
      * @return string
      */
-    public function send(string $phone, string $text, string $shortCode) : string
+    public function send(string $phone, string $text, string $shortCode = null) : string
     {
+        if ($shortCode === null) {
+            $shortCode = $this->defaultShortCode;
+        }
+
         $data = [
             'msisdn' => $phone,
             'text' => $text,
