@@ -2,7 +2,8 @@
 
 namespace Devim\Provider\MttServiceProvider;
 
-use Devim\Provider\MttServiceProvider\Service\MttSmsService;
+use Devim\Provider\MttServiceProvider\Service\BuilderParams;
+use Devim\Provider\MttServiceProvider\Service\DoveSmsService;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -25,9 +26,13 @@ class MttServiceProvider implements ServiceProviderInterface
         $container['mtt.password'] = '';
         $container['mtt.default_short_code'] = '';
         $container['mtt.url'] = '';
+        $container['mtt.source'] = '';
 
+        $container['sms.builder.params'] = function () use ($container) {
+            return new BuilderParams($container['mtt.login'], $container['mtt.password'], $container['mtt.default_short_code'], $container['mtt.source']);
+        };
         $container['sms.mtt'] = function () use ($container) {
-            return new MttSmsService($container['mtt.login'], $container['mtt.password'], $container['mtt.url'], $container['mtt.default_short_code']);
+            return new DoveSmsService($container['sms.builder.params'], $container['mtt.url']);
         };
     }
 }

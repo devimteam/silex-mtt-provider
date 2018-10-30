@@ -4,7 +4,7 @@ namespace Devim\Provider\MttServiceProvider\Helper;
 
 use Devim\Provider\MttServiceProvider\Exception\SmsErrorException;
 
-class MttResponseFilter
+class ResponseFilter
 {
     const SMS_STATUS_ACCEPTED = 0;
     const SMS_STATUS_DELIVERED = 1;
